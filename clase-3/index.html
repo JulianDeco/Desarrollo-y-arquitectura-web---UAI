@@ -189,8 +189,27 @@
         </aside>
       </section>
     </main>
-    <section>
-      <form action=""></form>
-    </section>
+    <footer>
+      <form>
+        <label for="fullname">Nombre completo</label>
+        <input type="text" id="fullname" name="fullname" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <label for="age">Edad</label>
+        <input type="number" name="age" id="age" min="0" max="99" required>
+        <label for="file">Archivo</label>
+        <input type="file" name="file" id="file">
+        <label for="ocupation">Ocupación</label>
+        <select name="ocupation" id="ocupation" required>
+          <option value="student">Estudiante</option>
+          <option value="worker">Trabajador</option>
+          <option value="unemployed">Desempleado</option>
+        </select>
+        <label for="comments">Comentarios</label>
+        <textarea name="comments" id="comments" maxlength="500">
+        </textarea>
+        <input type="submit" value="Enviar">
+      </form>
+    </footer>
   </body>
 </html>
