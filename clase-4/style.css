@@ -23,16 +23,31 @@ body {
 
 .top-header a:hover{
     color: #2c2c2c;
+    font-size: 20px;
 }
 
+.bottom-header {
+    border-top: 1px solid #070707;
+}
 
-.bottom-header a {
+.bottom-header a{
+    text-decoration: none;
+    color: #616060;
+}
+
+.bottom-header a:hover{
+    color: #222121;
+    font-size: 20px;
+}
+
+.topics a {
     color: #0994DC;
     text-decoration: none;
 }
 
-.navbar a:hover {
+.topics a:hover {
     color: #065881;
+    font-size: 20px;
 }
 
 .news-title {
