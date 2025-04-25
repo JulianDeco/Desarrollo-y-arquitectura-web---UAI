@@ -57,3 +57,19 @@ body {
 .aside-section {
     background-color: #F2F2F2;
 }
+
+.enlace-lista {
+    color: #0994DC;
+}
+
+.enlaces-aside {
+    color: #121212;
+}
+
+.enlaces-aside:hover {
+    color: #828282;
+}
+
+.titulos-aside {
+    color:#006699;
+}
