@@ -73,3 +73,15 @@ body {
 .titulos-aside {
     color:#006699;
 }
+
+.diferencia-cotizacion-positiva{
+    color: #27AE60;
+}
+
+.diferencia-cotizacion-negativa{
+    color: #EB5757;
+}
+
+.diferencia-cotizacion-nula{
+    color: #0994DC;
+}
