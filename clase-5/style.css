@@ -85,3 +85,20 @@ body {
 .diferencia-cotizacion-nula{
     color: #0994DC;
 }
+
+.icon {
+    display: none;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+    .top-header,
+    .bottom-header {
+      display: none;
+    }
+
+    .icon {
+        display: block;
+    }
+  }
