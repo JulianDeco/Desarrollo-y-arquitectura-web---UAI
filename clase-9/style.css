@@ -92,17 +92,6 @@ body {
     max-height: 40px;
 }
 
-@media only screen and (max-width: 480px) {
-    .top-header,
-    .bottom-header {
-      display: none;
-    }
-
-    .icon {
-        display: block;
-    }
-  }
-
 
 .subscription-form {
     display: grid;
@@ -120,3 +109,26 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+
+@media only screen and (max-width: 480px) {
+    .top-header,
+    .bottom-header {
+        display: none;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .subscription-form {
+        grid-template-columns: 100%;
+        grid-column: 1;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
