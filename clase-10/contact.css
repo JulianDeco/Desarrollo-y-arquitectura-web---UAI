@@ -1,0 +1,33 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  .full-width {
+    grid-column: 1 / -1;
+  }
+
+  .form-grid div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-grid label {
+    margin-top: 25px;
+    margin-bottom: 5px;
+  }
+
+  .form-grid input {
+    width: 100%;
+  }
+}
