@@ -1,4 +1,26 @@
+function enviar_datos(data){
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: data
+  }) 
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data_http => {
+    console.log(data_http);
+    alert("Datos del formulario:\n" + JSON.stringify(data));
+  })
+  .catch(error => {
+    alert('Error durante petición HTTP:', error);
+  });
+}
+
 var form = document.getElementsByClassName('subscription-form')[0];
+
+
 
 function btnForm(event) {
   event.preventDefault();
@@ -16,7 +38,7 @@ function btnForm(event) {
   if (errors.length > 0) {
     alert("Errores:\n" + errors.join("\n"));
   } else {
-    alert("Datos del formulario:\n" + JSON.stringify(data, null, 2));
+    enviar_datos(data)
   }
 }
 
