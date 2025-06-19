@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <header class="header">
+      <h1 class="title">Diario "Él capitán"</h1>
+    </header>
+    <nav class="navbar">
+      <ul class="list-navbar">
+        <li class="item-navbar"><a href="">Economía</a></li>
+        <li class="item-navbar"><a href="">Política</a></li>
+        <li class="item-navbar"><a href="">Policiales</a></li>
+        <li class="item-navbar"><a href="">Bolsa de empleo</a></li>
+        <li class="item-navbar"><a href="./contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <main>
+    <section class="main">
+        <form class="subscription-form form-grid">
+        <h2 class="full-width">Formulario de suscripción</h2>
+
+        <div>
+          <label for="fullname">Nombre completo</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            minlength="7"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+
+        <div>
+          <label for="password">Contraseña</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            title="Debe tener al menos 8 caracteres, incluyendo letras y números"
+          />
+        </div>
+
+        <div>
+          <label for="password_2">Repetir contraseña</label>
+          <input
+            type="password"
+            name="password_2"
+            id="password_2"
+            required
+            title="Debe tener al menos 8 caracteres, incluyendo letras y números"
+          />
+        </div>
+
+        <div>
+          <label for="age">Edad</label>
+          <input type="number" name="age" id="age" min="18" required />
+        </div>
+
+        <div>
+          <label for="phone">Teléfono</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            required
+            title="Debe tener al menos 7 dígitos"
+          />
+        </div>
+
+        <div>
+          <label for="address">Dirección</label>
+          <input
+            type="text"
+            name="address"
+            id="address"
+            required
+            title="Debe tener al menos 5 caracteres, incluyendo letras o números"
+          />
+        </div>
+
+        <div>
+          <label for="city">Ciudad</label>
+          <input type="text" name="city" id="city" minlength="3" required />
+        </div>
+
+        <div>
+          <label for="zipcode">Código Postal</label>
+          <input
+            type="text"
+            name="zipcode"
+            id="zipcode"
+            minlength="3"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="dni">DNI</label>
+          <input
+            type="text"
+            name="dni"
+            id="dni"
+            required
+            title="Debe tener 7 u 8 dígitos numéricos"
+          />
+        </div>
+
+        <div class="full-width">
+          <input type="submit" value="Enviar" />
+        </div>
+      </form>
+    </section>
+    </main>
+      <footer>
+      <p>&copy; 2025 Diario Él Capitán. Todos los derechos reservados.</p>
+      <p>Contacto: contacto@elcapitan.com.ar | Redes: @DiarioElCapitan</p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
