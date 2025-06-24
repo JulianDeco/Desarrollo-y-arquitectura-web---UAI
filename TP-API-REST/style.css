@@ -1,211 +1,212 @@
 body {
-    background-color: green;
-    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+  background-color: green;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    Ubuntu, sans-serif;
 }
 
 main {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 0.5fr;
-    grid-template-rows: 100px 100px;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 100px 100px;
 }
 
 .rick img {
-    width: 100%;
-    max-height: 400px;
+  width: 100%;
+  max-height: 400px;
 }
 
 .morty img {
-    width: 100%;
-    max-height: 400px;
+  width: 100%;
+  max-height: 400px;
 }
 
 header {
-    max-width: 100%;
-    background-color: orange;
-    max-height: 100%;
-    padding: 100px;
+  max-width: 100%;
+  background-color: orange;
+  max-height: 100%;
+  padding: 100px;
 }
 
 .title-header {
-    text-align: center;
+  text-align: center;
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 button {
-    margin: 25px;
-    width: 200px;
-    height: 70px;
-    color: white;
-    background-color: cornflowerblue;
-    box-sizing: border-box;
-    border-radius: 6px;
-    border-width: 0;
-    appearance: button;
-    outline: none;
-    overflow: hidden;
+  margin: 25px;
+  width: 200px;
+  height: 70px;
+  color: white;
+  background-color: cornflowerblue;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border-width: 0;
+  appearance: button;
+  outline: none;
+  overflow: hidden;
 }
 
 .pagination-btn {
-    margin: 25px;
-    width: 200px;
-    height: 70px;
-    padding: 25px 0;
-    color: white;
-    background-color: cornflowerblue;
-    box-sizing: border-box;
-    border-radius: 6px;
-    border-width: 0;
-    appearance: button;
-    outline: none;
-    overflow: hidden;
-    text-decoration: none;
-    text-align: center;
+  margin: 25px;
+  width: 200px;
+  height: 70px;
+  padding: 25px 0;
+  color: white;
+  background-color: cornflowerblue;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border-width: 0;
+  appearance: button;
+  outline: none;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
 }
 
 button:active {
-    background-color: royalblue;
-    transform: scale(0.97);
+  background-color: royalblue;
+  transform: scale(0.97);
 }
 
 .results-buttons {
-    display: none;
-    justify-content: center;
-    align-items: center;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .results {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px;
-    width: 200px;
-    text-align: center;
-    background-color: #f9f9f9;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
-    width: 100%;
-    border-radius: 6px;
+  width: 100%;
+  border-radius: 6px;
 }
 
 .results-fetch {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  flex-direction: row;
 }
 
 .filters {
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
 }
 
 .results label {
-    width: 90px;
-    font-weight: 600;
-    margin-right: 10px;
-    text-align: right;
+  width: 90px;
+  font-weight: 600;
+  margin-right: 10px;
+  text-align: right;
 }
 
 .results input[type="text"],
 .results select {
-    flex: 1;
-    padding: 6px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
 }
 
 .results input[type="text"]:focus,
 .results select:focus {
-    border-color: cornflowerblue;
-    outline: none;
+  border-color: cornflowerblue;
+  outline: none;
 }
 
 @media (max-width: 768px) {
-    main {
-        display: block;
-        padding: 0 10px;
-    }
+  main {
+    display: block;
+    padding: 0 10px;
+  }
 
-    .rick,
-    .morty,
-    .api {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+  .rick,
+  .morty,
+  .api {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-    .rick img,
-    .morty img {
-        max-height: 250px;
-    }
+  .rick img,
+  .morty img {
+    max-height: 250px;
+  }
 
-    header {
-        padding: 40px 10px;
-    }
+  header {
+    padding: 40px 10px;
+  }
 
-    .buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
+  .buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 
-    button,
-    .pagination-btn {
-        width: 150px;
-        height: 50px;
-        margin: 10px 5px;
-        padding: 0;
-        font-size: 14px;
-    }
+  button,
+  .pagination-btn {
+    width: 150px;
+    height: 50px;
+    margin: 10px 5px;
+    padding: 0;
+    font-size: 14px;
+  }
 
-    .results {
-        flex-direction: column;
-        padding: 0 5px;
-    }
+  .results {
+    flex-direction: column;
+    padding: 0 5px;
+  }
 
-    .results-fetch {
-        justify-content: center;
-    }
+  .results-fetch {
+    justify-content: center;
+  }
 
-    .card {
-        width: 90%;
-        margin: 10px auto;
-    }
+  .card {
+    width: 90%;
+    margin: 10px auto;
+  }
 
-    .filters > div {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .filters > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .results label {
-        width: auto;
-        margin-bottom: 4px;
-        text-align: left;
-    }
+  .results label {
+    width: auto;
+    margin-bottom: 4px;
+    text-align: left;
+  }
 
-    .results input[type="text"],
-    .results select {
-        width: 100%;
-    }
+  .results input[type="text"],
+  .results select {
+    width: 100%;
+  }
 }
