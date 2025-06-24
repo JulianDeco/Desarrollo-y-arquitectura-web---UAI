@@ -12,15 +12,54 @@ var div_api = document.getElementsByClassName("api")
 var BTN_SEARCH = document.getElementsByClassName("search")[0]
 var BTN_CHARACTERS = document.getElementsByClassName("characters")[0]
 
-BTN_SEARCH.addEventListener('click', api_manager_btn);
-BTN_CHARACTERS.addEventListener('click', api_manager_btn);
+BTN_SEARCH.addEventListener('click', api_manager_btn)
+BTN_CHARACTERS.addEventListener('click', api_manager_btn)
+
+function print_results(data){
+    var container = document.getElementsByClassName("results-fetch")[0]
+
+    for (var i = 0; i < data.results.length; i++) {
+        var personaje = data.results[i]
+
+        var div_card = document.createElement("div")
+        div_card.classList.add("card")
+
+        var img = document.createElement("img")
+        img.setAttribute("src", personaje.image)
+        img.setAttribute("alt", personaje.name)
+        div_card.appendChild(img)
+
+        var h2 = document.createElement("h2")
+        h2.textContent = personaje.name
+        div_card.appendChild(h2)
+
+        var p_status = document.createElement("p")
+        p_status.textContent = "Estado: " + personaje.status
+        div_card.appendChild(p_status)
+
+        var p_species = document.createElement("p")
+        p_species.textContent = "Especie: " + personaje.species
+        div_card.appendChild(p_species)
+
+        var p_type = document.createElement("p")
+        p_type.textContent = "Tipo: " + personaje.type
+        div_card.appendChild(p_type)
+
+        var p_gender = document.createElement("p")
+        p_gender.textContent = "Género: " + personaje.gender
+        div_card.appendChild(p_gender)
+
+        container.appendChild(div_card)
+    }
+}
 
 function api_manager_btn(event){
     
     if (event.target === BTN_SEARCH) {
-        console.log("Se apretó Buscar");
+        console.log("Se apretó Buscar")
     } else if (event.target === BTN_CHARACTERS) {
-        console.log("Se apretó Personajes");
+        console.log("Se apretó Personajes")
+        var api_results = fetch_api(API_CHARACTERS, event.target)
     }
 }
 function clean_results_page(){
@@ -34,25 +73,28 @@ function buttons_pagination_api(url_prev = null, url_next = null){
     var prev_button = document.getElementsByClassName("pagination-btn")[0]
     var next_button = document.getElementsByClassName("pagination-btn")[1]
 
-    prev_button.setAttribute("href", url_prev);
-    prev_button.setAttribute("target", "_blank");
+    prev_button.setAttribute("href", url_prev)
+    prev_button.setAttribute("target", "_blank")
 
-    next_button.setAttribute("href", url_next);
-    next_button.setAttribute("target", "_blank");
+    next_button.setAttribute("href", url_next)
+    next_button.setAttribute("target", "_blank")
 
 }
 
-function fetch_api(url){
+function fetch_api(url, target){
     fetch(url)
     .then(response => {
         if (!response.ok) {
-            throw new Error("Error en la solicitud: " + response.status);
+            throw new Error("Error en la solicitud: " + response.status)
         }
-        return response.json();
+        return response.json()
     })
     .then(data => {
         console.log("Datos recibidos:", data);
         buttons_pagination_api(data.info.prev, data.info.next)
+        if (target == BTN_CHARACTERS){
+            print_results(data)
+        }
     })
     .catch(error => {
         console.error("Error al obtener los datos:", error)
@@ -63,9 +105,8 @@ function fetch_api(url){
 function functions_api(destino, id = null){
     switch (destino) {
     case "CHARACTERS":
-        console.log("El color es rojo");
         fetch_api(API_CHARACTERS)
-        break;
+        break
 
     case "SINGLE_CHARACTER":
         if (id === null || id < 0){
@@ -74,14 +115,14 @@ function functions_api(destino, id = null){
         }
         var URL_SINGLE_CHARACTER = API_CHARACTERS + id
         fetch_api(URL_SINGLE_CHARACTER)
-        break;
+        break
 
     case "EPISODE":
-        console.log("El color es verde");
+        console.log("El color es verde")
         fetch_api(API_EPISODE)
-        break;
+        break
 
     default:
-        console.log("Opción no reconocida");
+        console.log("Opción no reconocida")
 }
 }
