@@ -16,6 +16,7 @@ BTN_SEARCH.addEventListener('click', api_manager_btn)
 BTN_CHARACTERS.addEventListener('click', api_manager_btn)
 
 function print_results(data){
+    clean_results_page()
     var container = document.getElementsByClassName("results-fetch")[0]
 
     for (var i = 0; i < data.results.length; i++) {
