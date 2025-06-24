@@ -51,6 +51,24 @@ button {
     overflow: hidden;
 }
 
+.pagination-btn {
+    margin: 25px;
+    width: 200px;
+    height: 70px;
+    padding: 25px 0;
+    color: white;
+    background-color: cornflowerblue;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border-width: 0;
+    appearance: button;
+    outline: none;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+}
+
+
 button:active {
     background-color: royalblue;
     transform: scale(0.97);
