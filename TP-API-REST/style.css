@@ -38,7 +38,7 @@ header {
 }
 
 button {
-    margin-top: 20px;
+    margin: 25px;
     width: 200px;
     height: 70px;
     color: white;
@@ -49,10 +49,21 @@ button {
     appearance: button;
     outline: none;
     overflow: hidden;
-    padding: 0 25px;
 }
 
 button:active {
     background-color: royalblue;
     transform: scale(0.97);
+}
+
+.results-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
