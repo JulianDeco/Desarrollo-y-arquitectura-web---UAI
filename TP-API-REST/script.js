@@ -1,3 +1,5 @@
+alert('AVISO\nNo todos los inputs son obligatorios de completar para hacer una búsqueda.\nSaludos!')
+
 var URL_API = "https://rickandmortyapi.com/api/"
 var API_CHARACTERS = URL_API + "character"
 var API_LOCATION = URL_API + "location"
@@ -15,6 +17,37 @@ var BTN_CHARACTERS = document.getElementsByClassName("characters")[0]
 BTN_SEARCH.addEventListener('click', api_manager_btn)
 BTN_CHARACTERS.addEventListener('click', api_manager_btn)
 
+function get_filters() {
+  var filters = {};
+  
+  var name = document.getElementById('name').value.trim();
+  if (name !== '') filters.name = name;
+  
+  var status = document.getElementById('status').value;
+  if (status !== '') filters.status = status;
+  
+  var species = document.getElementById('species').value.trim();
+  if (species !== '') filters.species = species;
+  
+  var type = document.getElementById('type').value.trim();
+  if (type !== '') filters.type = type;
+  
+  var gender = document.getElementById('gender').value;
+  if (gender !== '') filters.gender = gender;
+  
+  return filters;
+}
+
+function btn_search_manager(){
+    var filters = get_filters()
+    var API_CHARACTERS_FILTERS = API_CHARACTERS + '?'
+    for (var key in filters) {
+        if (filters.hasOwnProperty(key)) {
+            API_CHARACTERS_FILTERS = API_CHARACTERS_FILTERS + key + '=' + filters[key] + '&'
+        }
+    }
+    fetch_api(API_CHARACTERS_FILTERS)
+}
 
 function print_results(data){
     clean_results_page()
@@ -61,13 +94,14 @@ function api_manager_btn(event){
 
     if (event.target === BTN_SEARCH) {
         console.log("Se apretó Buscar")
+        btn_search_manager()
     } else if (event.target === BTN_CHARACTERS) {
         console.log("Se apretó Personajes")
-        var api_results = fetch_api(API_CHARACTERS, event.target)
+        var api_results = fetch_api(API_CHARACTERS)
     } else if (event.target.tagName === "A") {
         var url = event.target.getAttribute("href")
         if (url !== null){
-            fetch_api(url, event.target)
+            fetch_api(url)
         }
         
     }
@@ -94,7 +128,7 @@ function buttons_pagination_api(url_prev = null, url_next = null){
     next_button.addEventListener('click', api_manager_btn)
 }
 
-function fetch_api(url, target){
+function fetch_api(url){
     fetch(url)
     .then(response => {
         if (!response.ok) {

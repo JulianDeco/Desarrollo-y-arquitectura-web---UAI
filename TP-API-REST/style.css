@@ -9,12 +9,12 @@ main {
     grid-template-rows: 100px 100px;
 }
 
-.rick img{
+.rick img {
     width: 100%;
     max-height: 400px;
 }
 
-.morty img{
+.morty img {
     width: 100%;
     max-height: 400px;
 }
@@ -68,7 +68,6 @@ button {
     text-align: center;
 }
 
-
 button:active {
     background-color: royalblue;
     transform: scale(0.97);
@@ -87,6 +86,7 @@ button:active {
     align-items: center;
     width: 100%;
 }
+
 .card {
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -110,4 +110,102 @@ button:active {
     gap: 15px;
     padding: 10px;
     flex-direction: row;
+}
+
+.filters {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.results label {
+    width: 90px;
+    font-weight: 600;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.results input[type="text"],
+.results select {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.results input[type="text"]:focus,
+.results select:focus {
+    border-color: cornflowerblue;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    main {
+        display: block;
+        padding: 0 10px;
+    }
+
+    .rick,
+    .morty,
+    .api {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .rick img,
+    .morty img {
+        max-height: 250px;
+    }
+
+    header {
+        padding: 40px 10px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    button,
+    .pagination-btn {
+        width: 150px;
+        height: 50px;
+        margin: 10px 5px;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .results {
+        flex-direction: column;
+        padding: 0 5px;
+    }
+
+    .results-fetch {
+        justify-content: center;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .filters > div {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .results label {
+        width: auto;
+        margin-bottom: 4px;
+        text-align: left;
+    }
+
+    .results input[type="text"],
+    .results select {
+        width: 100%;
+    }
 }
