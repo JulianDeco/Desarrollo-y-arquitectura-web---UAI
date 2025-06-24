@@ -15,6 +15,7 @@ var BTN_CHARACTERS = document.getElementsByClassName("characters")[0]
 BTN_SEARCH.addEventListener('click', api_manager_btn)
 BTN_CHARACTERS.addEventListener('click', api_manager_btn)
 
+
 function print_results(data){
     clean_results_page()
     var container = document.getElementsByClassName("results-fetch")[0]
@@ -56,11 +57,19 @@ function print_results(data){
 
 function api_manager_btn(event){
     
+    event.preventDefault()
+
     if (event.target === BTN_SEARCH) {
         console.log("Se apretó Buscar")
     } else if (event.target === BTN_CHARACTERS) {
         console.log("Se apretó Personajes")
         var api_results = fetch_api(API_CHARACTERS, event.target)
+    } else if (event.target.tagName === "A") {
+        var url = event.target.getAttribute("href")
+        if (url !== null){
+            fetch_api(url, event.target)
+        }
+        
     }
 }
 function clean_results_page(){
@@ -70,16 +79,19 @@ function clean_results_page(){
     }
 }
 
+function api_pagination_btn(event){
+}
+
 function buttons_pagination_api(url_prev = null, url_next = null){
     var prev_button = document.getElementsByClassName("pagination-btn")[0]
     var next_button = document.getElementsByClassName("pagination-btn")[1]
 
     prev_button.setAttribute("href", url_prev)
-    prev_button.setAttribute("target", "_blank")
 
     next_button.setAttribute("href", url_next)
-    next_button.setAttribute("target", "_blank")
 
+    prev_button.addEventListener('click', api_manager_btn)
+    next_button.addEventListener('click', api_manager_btn)
 }
 
 function fetch_api(url, target){
@@ -93,9 +105,10 @@ function fetch_api(url, target){
     .then(data => {
         console.log("Datos recibidos:", data);
         buttons_pagination_api(data.info.prev, data.info.next)
-        if (target == BTN_CHARACTERS){
-            print_results(data)
-        }
+        print_results(data)
+        var print_pagination = document.getElementsByClassName('results-buttons')[0]
+        print_pagination.style.display = 'flex'
+    
     })
     .catch(error => {
         console.error("Error al obtener los datos:", error)
