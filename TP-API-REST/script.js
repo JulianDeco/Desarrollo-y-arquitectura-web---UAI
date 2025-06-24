@@ -9,7 +9,20 @@ var API_PREV = ""
 
 var div_api = document.getElementsByClassName("api")
 
+var BTN_SEARCH = document.getElementsByClassName("search")[0]
+var BTN_CHARACTERS = document.getElementsByClassName("characters")[0]
 
+BTN_SEARCH.addEventListener('click', api_manager_btn);
+BTN_CHARACTERS.addEventListener('click', api_manager_btn);
+
+function api_manager_btn(event){
+    
+    if (event.target === BTN_SEARCH) {
+        console.log("Se apretó Buscar");
+    } else if (event.target === BTN_CHARACTERS) {
+        console.log("Se apretó Personajes");
+    }
+}
 function clean_results_page(){
     var results_page = document.getElementsByClassName('results-fetch')[0]
     while (results_page.firstChild) {
@@ -72,5 +85,3 @@ function functions_api(destino, id = null){
         console.log("Opción no reconocida");
 }
 }
-
-fetch_api(API_CHARACTERS)
